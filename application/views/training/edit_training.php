@@ -1,0 +1,83 @@
+<form action="<?= base_url('training/updatetraining'); ?>" method="post" class="formTraining">
+    <div class="mb-3 form-group">
+        <input type="text" readonly value="<?= $training['id']; ?>" class="form-control" name="id" placeholder="id">
+    </div>
+    <div class="mb-3 form-group">
+        <input type="text" value="<?= $training['nama_training']; ?>" class="form-control" name="namatraining"
+            placeholder="Nama Training">
+    </div>
+    <div class="mb-3 form-group">
+        <input type="date" value="<?= $training['tanggal_training']; ?>" class="form-control" name="tanggaltraining"
+            placeholder="Tanggal Training">
+    </div>
+    <div class="mb-3 form-group">
+        <input type="text" value="<?= $training['trainer']; ?>" class="form-control" name="trainer"
+            placeholder="Trainer">
+    </div>
+    <div class="mb-3 form-group">
+        <input type="text" value="<?= $training['status']; ?>" class="form-control" name="status" placeholder="Status">
+    </div>
+    <div class="mb-3 form-group">
+        <input type="text" value="<?= $training['nilai']; ?>" class="form-control" name="nilai" placeholder="Nilai">
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary w-100"> <svg xmlns="http://www.w3.org/2000/svg" class="icon"
+                width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+                <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5" />
+            </svg>Update </button>
+    </div>
+</form>
+
+<!-- jquery -->
+
+<script>
+$(function() {
+    $('.formTraining').bootstrapValidator({
+        fields: {
+            namatraining: {
+                message: 'Nama training tidak valid!',
+                validators: {
+                    notEmpty: {
+                        message: ' Nama training harus Diisi!'
+                    }
+                }
+            },
+            tanggaltraining: {
+                message: 'Tanggal training tidak valid!',
+                validators: {
+                    notEmpty: {
+                        message: 'Tanggal training harus Diisi!'
+                    }
+                }
+            },
+            trainer: {
+                message: 'Trainer tidak valid!',
+                validators: {
+                    notEmpty: {
+                        message: 'Trainer harus Diisi!'
+                    }
+                }
+            },
+            status: {
+                message: 'Status tidak valid!',
+                validators: {
+                    notEmpty: {
+                        message: 'Status harus Diisi!'
+                    }
+                }
+            },
+            nilai: {
+                message: 'Nilai tidak valid!',
+                validators: {
+                    notEmpty: {
+                        message: 'Nilai harus Diisi!'
+                    }
+                }
+            },
+        }
+    });
+});
+</script>
